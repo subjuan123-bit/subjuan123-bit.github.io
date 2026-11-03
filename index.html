@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sebastian Acendra | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Mechanical engineering portfolio of Sebastian Acendra (Georgia Tech, Dec 2026): Army-backed counter-drone capstone, EcoCAR, vibration and thermal projects.">
+<meta name="theme-color" content="#040906">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.38' cy='.3' r='.8'%3E%3Cstop offset='0' stop-color='%23f4f8f6'/%3E%3Cstop offset='.45' stop-color='%23b9c3c7'/%3E%3Cstop offset='1' stop-color='%234a565b'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='29' fill='url(%23g)' stroke='%2369d02a' stroke-width='5'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='24' fill='%2314201a'%3ESA%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://subjuan123-bit.github.io/">
+<meta property="og:title" content="Sebastian Acendra | Mechanical Engineering Portfolio">
+<meta property="og:description" content="Mechanical engineering portfolio of Sebastian Acendra (Georgia Tech, Dec 2026): Army-backed counter-drone capstone, EcoCAR, vibration and thermal projects.">
+<meta property="og:image" content="https://subjuan123-bit.github.io/img/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="shell">
+  <header class="guide">
+    <div class="wrap">
+      <button class="mini" id="miniCard" data-nav aria-label="Open profile">
+        <span class="av" id="miniAv"><span class="mono" style="font-size:15px">SA</span></span>
+        <span class="who"><span class="tag">Sebastian Acendra</span><span class="gs"><span class="gglyph">G</span><span id="miniGs">0</span></span></span>
+      </button>
+      <nav class="pivots" aria-label="Sections">
+        <span class="bumper" aria-hidden="true">Q</span>
+        <button class="pivot" data-tab="home" data-nav>Home</button>
+        <button class="pivot" data-tab="achievements" data-nav>Achievements</button>
+        <button class="pivot" data-tab="profile" data-nav>Profile</button>
+        <button class="pivot" data-tab="resume" data-nav>Resume</button>
+        <span class="bumper" aria-hidden="true">E</span>
+      </nav>
+      <div class="sys">
+        <button class="iconbtn" id="muteBtn" data-nav aria-pressed="false"></button>
+        <span class="clock" id="clock"></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="view wrap" id="v-home" aria-label="Home"></section>
+    <section class="view wrap" id="v-achievements" aria-label="Achievements" hidden></section>
+    <section class="view wrap" id="v-profile" aria-label="Profile" hidden></section>
+    <section class="view wrap" id="v-resume" aria-label="Resume" hidden></section>
+    <section class="view wrap" id="v-project" aria-label="Project" hidden></section>
+  </main>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lbtop">
+    <span class="lbcount" id="lbCount"></span>
+    <button class="backbtn" id="lbClose" data-lnav><span class="pad b">B</span>Close</button>
+  </div>
+  <div class="lbstage">
+    <button class="lbnav" id="lbPrev" data-lnav aria-label="Previous photo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <figure><img id="lbImg" alt=""></figure>
+    <button class="lbnav" id="lbNext" data-lnav aria-label="Next photo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <div class="lbcap"><span id="lbCap"></span><button class="iconbtn" id="lbRemove" data-lnav hidden>Remove photo</button></div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<input type="file" id="filePick" accept="image/*" multiple hidden>
+
+<footer class="legend" aria-hidden="true">
+  <div class="wrap">
+    <span><kbd>←↑↓→</kbd> Move</span>
+    <span><span class="pad a">A</span><kbd>Enter</kbd> Select</span>
+    <span><span class="pad b">B</span><kbd>Esc</kbd> Back</span>
+    <span><span class="pad bump">LB RB</span><kbd>Q / E</kbd> Sections</span>
+    <span><kbd>M</kbd> Sound</span>
+  </div>
+</footer>
+<script src="assets/content.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
